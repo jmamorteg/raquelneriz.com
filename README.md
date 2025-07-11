@@ -104,8 +104,10 @@ El sitio está optimizado para móviles y tablets automáticamente.
 
 ### Solución de problemas:
 - Si los estilos no se aplican, verifica que `main.css` existe y está linkeado en `default.html`
+- Si hay errores de build en GitHub Actions, GitHub Pages maneja Jekyll automáticamente
 - Consulta `TROUBLESHOOTING.md` para problemas comunes
 - Espera 2-3 minutos después de hacer push para ver cambios en GitHub Pages
+- Si ves "Error 404", verifica que el repositorio esté público y GitHub Pages esté activado
 
 ## 📞 Soporte
 
