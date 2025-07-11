@@ -55,11 +55,17 @@ bundle exec jekyll serve
 ## 🎨 Personalización
 
 ### Colores y estilos
-- Edita `assets/css/style.scss` para cambiar los colores y estilos
+- **Archivo principal**: `assets/css/main.css` - Aquí está todo tu diseño personalizado
+- **Archivo alternativo**: `assets/css/style.scss` - Versión SCSS (menos prioritaria)
 - Los colores principales están definidos en las variables CSS al inicio del archivo
 
+### Estructura y layouts
+- `_layouts/default.html`: Layout base de todas las páginas (HTML estructura)
+- `_layouts/home.html`: Layout específico para la página de inicio
+- `_layouts/post.html`: Layout para posts individuales
+
 ### Contenido de páginas
-- `index.markdown`: Página de inicio
+- `index.html`: Página de inicio (usa layout: default)
 - `about.markdown`: Página "Sobre mí"
 - `blog.markdown`: Página del blog
 - `contact.markdown`: Página de contacto
@@ -67,6 +73,12 @@ bundle exec jekyll serve
 ### Configuración general
 - `_config.yml`: Configuración general del sitio
 - Cambia título, descripción, email, etc.
+
+### Orden de prioridad para modificar el diseño:
+1. **`assets/css/main.css`** - ¡EL MÁS IMPORTANTE! Aquí están todos los estilos
+2. **`_layouts/default.html`** - Para cambios en la estructura HTML
+3. **`index.html`** - Para cambios en el contenido de la página principal
+4. **`_config.yml`** - Para cambios en la configuración general
 
 ## 📱 Responsive Design
 
@@ -77,6 +89,23 @@ El sitio está optimizado para móviles y tablets automáticamente.
 - Los posts se publican automáticamente cuando haces commit
 - GitHub Pages se actualiza automáticamente
 - El sitio funciona sin necesidad de servidor propio
+
+## 🎯 Archivos clave para el diseño
+
+### Para aplicar cambios visuales:
+1. **`assets/css/main.css`** - Archivo CSS principal con todos los estilos
+2. **`_layouts/default.html`** - Estructura HTML base
+3. **`index.html`** - Contenido de la página principal
+
+### Para ver cambios:
+- **Localmente**: `http://localhost:4000` (con servidor corriendo)
+- **GitHub Pages**: `https://jmamorteg.github.io/raquelneriz.com/`
+- **Con dominio**: `https://raquelneriz.com` (cuando esté configurado)
+
+### Solución de problemas:
+- Si los estilos no se aplican, verifica que `main.css` existe y está linkeado en `default.html`
+- Consulta `TROUBLESHOOTING.md` para problemas comunes
+- Espera 2-3 minutos después de hacer push para ver cambios en GitHub Pages
 
 ## 📞 Soporte
 
