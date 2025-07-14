@@ -6,6 +6,44 @@
 
 /* Personalización del tema Minimal */
 /* Este archivo se carga DESPUÉS del tema base */
+/* Actualización: 2025-07-14 - Forzar regeneración del CSS */
+
+/* Personalización de colores para el tema Minimal */
+h1, h2, h3, h4, h5, h6 {
+    color: #8B4513 !important;
+}
+
+a {
+    color: #D2691E !important;
+}
+
+a:hover {
+    color: #8B4513 !important;
+}
+
+/* Estilos específicos para posts */
+.post-title {
+    color: #8B4513 !important;
+}
+
+/* Eliminar estilos por defecto del tema que interfieren */
+body {
+    font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* Asegurar que los títulos usen nuestros colores */
+h1, h2, h3, h4, h5, h6 {
+    color: #8B4513 !important;
+}
+
+/* Sobrescribir colores específicos del tema */
+h2 {
+    color: #8B4513 !important;
+}
+
+h3, h4, h5, h6 {
+    color: #8B4513 !important;
+}
 
 /* Personalización de colores para el tema Minimal */
 h1, h2, h3, h4, h5, h6 {
