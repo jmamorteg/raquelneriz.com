@@ -7,28 +7,22 @@
 /* Personalización del tema Minimal */
 /* Este archivo se carga DESPUÉS del tema base */
 
-/* Variables personalizadas */
-:root {
-    --primary-color: #8B4513;
-    --secondary-color: #D2691E;
-}
-
 /* Personalización de colores para el tema Minimal */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--primary-color) !important;
+    color: #8B4513 !important;
 }
 
 a {
-    color: var(--secondary-color) !important;
+    color: #D2691E !important;
 }
 
 a:hover {
-    color: var(--primary-color) !important;
+    color: #8B4513 !important;
 }
 
 /* Estilos específicos para posts */
 .post-title {
-    color: var(--primary-color) !important;
+    color: #8B4513 !important;
 }
 
 .post-meta {
