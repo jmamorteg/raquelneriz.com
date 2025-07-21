@@ -2,10 +2,10 @@
 layout: default
 ---
 
-# Bienvenidos al sitio de Raquel Neriz
+# Bienvenidos
 
-Este es un sitio web simple usando el tema Jekyll Minimal.
+Este es el sitio web de Raquel Neriz.
 
 ## Acerca de mí
 
-Información profesional sobre Raquel Neriz.
+Información profesional.
