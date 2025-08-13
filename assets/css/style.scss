@@ -1,0 +1,53 @@
+---
+---
+
+/* Personalización del tema Minimal */
+/* Este archivo se carga automáticamente después del tema base */
+/* Actualización: 2025-07-21 - Forzar actualización de caché */
+
+/* Personalización de colores para el tema Minimal */
+h1, h2, h3, h4, h5, h6 {
+    color: #8B4513 !important;
+}
+
+a {
+    color: #D2691E !important;
+}
+
+a:hover {
+    color: #8B4513 !important;
+}
+
+/* Estilos específicos para posts */
+.post-title {
+    color: #8B4513 !important;
+}
+
+.post-meta {
+    color: #666 !important;
+    font-size: 0.9rem;
+}
+
+.post-date {
+    color: #666 !important;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+/* Lista de posts en home */
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+ul li a {
+    font-weight: 500;
+}
+
+/* Footer personalizado */
+footer {
+    background-color: #f9f9f9 !important;
+    border-top: 1px solid #e1e1e1 !important;
+    padding: 1rem 0 !important;
+    text-align: center !important;
+    color: #666 !important;
+}
