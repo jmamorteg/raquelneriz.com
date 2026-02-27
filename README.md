@@ -52,6 +52,22 @@ bundle exec jekyll serve
 # Ver el sitio en: http://localhost:4000
 ```
 
+### Windows (nuevo ordenador, recomendado)
+
+Para dejar todo listo en otro equipo Windows (Ruby + Bundler + certificados corporativos + gems):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\setup.ps1
+```
+
+O más fácil: haz doble clic en `setup.bat`.
+
+Si además quieres arrancar el servidor al final del setup:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\setup.ps1 -StartServer
+```
+
 ## 🎨 Personalización
 
 ### Colores y estilos
