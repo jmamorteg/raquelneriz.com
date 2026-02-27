@@ -23,6 +23,13 @@ Este es un sitio web personal construido con Jekyll y hospedado en GitHub Pages.
 
 ## 📝 Cómo publicar nuevos posts
 
+### Método recomendado (muy fácil)
+1. Haz doble clic en `nuevo-post.bat`.
+2. Escribe el título del post y pulsa Enter.
+3. Se abrirá el Bloc de notas con el post ya creado: escribe y guarda.
+4. Haz doble clic en `publicar-posts.bat` para subirlo.
+5. Espera 1-3 minutos y aparecerá en la web.
+
 ### Opción 1: Directamente en GitHub (más fácil)
 1. Ve a tu repositorio en GitHub
 2. Navega a la carpeta `_posts`
@@ -37,6 +44,10 @@ Este es un sitio web personal construido con Jekyll y hospedado en GitHub Pages.
 2. Crea un nuevo archivo en `_posts` con el formato de fecha
 3. Copia la plantilla y escribe tu contenido
 4. Haz commit y push a GitHub
+
+### Formato automático del nombre del archivo
+- El script crea el archivo con formato `YYYY-MM-DD-titulo.markdown` dentro de `_posts`.
+- Ya incluye estructura inicial para empezar a escribir sin tocar configuración.
 
 ## 🛠️ Desarrollo local
 
