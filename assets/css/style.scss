@@ -1,13 +1,192 @@
 ---
 ---
 
+@import "jekyll-theme-minimal";
+
 /* Personalización del tema Minimal */
 /* Este archivo se carga automáticamente después del tema base */
 /* Actualización: 2025-07-21 - Forzar actualización de caché */
 
+/* Tipografía global */
+body,
+p,
+li,
+blockquote,
+label,
+input,
+textarea,
+select,
+button {
+    font-family: "Maitree", "Noto Sans", "Segoe UI", Arial, sans-serif !important;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.site-title,
+.post-title {
+    font-family: "matrix-ii", "Maitree", "Noto Sans", "Segoe UI", Arial, sans-serif !important;
+    font-weight: 300;
+}
+
+em,
+i,
+.kintsugi-lead,
+.under-construction {
+    font-family: "matrix-ii", "Maitree", "Noto Sans", "Segoe UI", Arial, sans-serif !important;
+    font-style: italic;
+}
+
 /* Personalización de colores para el tema Minimal */
 h1, h2, h3, h4, h5, h6 {
     color: #8B4513 !important;
+}
+
+body {
+    background-color: #fffdf5;
+    color: #1f1f1f;
+}
+
+.wrapper {
+    background: transparent;
+}
+
+.site-nav {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid #e5dcc3;
+}
+
+.lang-switcher {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 0.35rem;
+}
+
+.lang-link {
+    border: 1px solid #ddcfab;
+    border-radius: 999px;
+    padding: 0.18rem 0.55rem;
+    font-size: 0.78rem;
+    text-decoration: none;
+    color: #444 !important;
+}
+
+.lang-link.is-current {
+    background: #8B6B2E;
+    color: #fff !important;
+    border-color: #8B6B2E;
+}
+
+.site-nav-list,
+.site-subnav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav-item {
+    margin: 0 0 0.55rem;
+}
+
+.site-nav-item > a,
+.site-nav-group > summary > span {
+    color: #1f1f1f !important;
+    text-decoration: none;
+    font-family: "Maitree", "Noto Sans", "Segoe UI", Arial, sans-serif !important;
+}
+
+.site-nav-item > a:hover,
+.site-nav-group > summary > span:hover,
+.site-subnav-list a:hover {
+    color: #8B6B2E !important;
+}
+
+.site-nav-group {
+    border: 1px solid #e6dbc0;
+    border-radius: 8px;
+    background: #fffef9;
+}
+
+.site-nav-group > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.45rem 0.55rem;
+}
+
+.site-nav-group > summary::-webkit-details-marker {
+    display: none;
+}
+
+.site-nav-group > summary::before {
+    content: "▸";
+    color: #8B6B2E;
+    margin-right: 0.35rem;
+}
+
+.site-nav-group[open] > summary::before {
+    content: "▾";
+}
+
+.site-subnav-list {
+    margin-top: 0.35rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+    margin-bottom: 0.55rem;
+    border-left: 2px solid #e8d9ab;
+    padding-left: 0.6rem;
+}
+
+.site-subnav-list li {
+    margin: 0.2rem 0;
+}
+
+.site-subnav-list a {
+    color: #3a3a3a !important;
+    font-size: 0.92rem;
+    text-decoration: none;
+}
+
+.site-subnav-overview a {
+    font-weight: 500;
+}
+
+.site-nav-item.is-active > a {
+    color: #8B6B2E !important;
+}
+
+.landing-minimal {
+    max-width: 560px;
+}
+
+.landing-minimal-logo {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.landing-minimal-title {
+    font-family: "matrix-ii", "Maitree", "Noto Sans", "Segoe UI", Arial, sans-serif !important;
+    font-style: italic;
+    font-size: 1.55rem;
+    margin-bottom: 0.4rem;
+    color: #3b3b3b;
+}
+
+.landing-minimal-text {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: #262626;
+}
+
+.landing-minimal-text a {
+    color: #8B6B2E !important;
 }
 
 a {
@@ -50,4 +229,122 @@ footer {
     padding: 1rem 0 !important;
     text-align: center !important;
     color: #666 !important;
+}
+
+.kintsugi-page {
+    max-width: 760px;
+}
+
+.kintsugi-eyebrow {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7a7a7a;
+    margin-bottom: 0.4rem;
+}
+
+.kintsugi-lead {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #8B6B2E;
+    margin-top: -0.2rem;
+}
+
+.kintsugi-poster-wrap {
+    margin: 1.5rem 0;
+}
+
+.kintsugi-poster {
+    width: 100%;
+    max-width: 460px;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.kintsugi-box {
+    border-left: 4px solid #C69A3A;
+    background: #fbf7ef;
+    padding: 1rem 1.1rem;
+    margin: 1.3rem 0;
+}
+
+.kintsugi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1rem 0 1.4rem;
+}
+
+.kintsugi-grid section {
+    background: #fafafa;
+    border: 1px solid #ececec;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+}
+
+.kintsugi-grid ul {
+    margin: 0.4rem 0 0;
+    padding-left: 1.1rem;
+}
+
+.kintsugi-cta {
+    margin-top: 1.4rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid #e9e9e9;
+}
+
+.kintsugi-note {
+    margin-top: 0.8rem;
+    font-size: 0.88rem;
+    color: #666;
+}
+
+@media (max-width: 760px) {
+    .kintsugi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-minimal-title {
+        font-size: 1.3rem;
+    }
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0 1.4rem;
+}
+
+.portfolio-card {
+    border: 1px solid #eee2bf;
+    background: #fffef9;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+}
+
+.portfolio-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.65rem;
+    background: #f2efe7;
+}
+
+.portfolio-hashtags {
+    font-size: 0.9rem;
+    color: #7b6b45;
+}
+
+.portfolio-empty {
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 760px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
 }

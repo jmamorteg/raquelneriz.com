@@ -2,6 +2,7 @@
 layout: default
 title: Contacto
 permalink: /contact/
+lang: es
 ---
 
 # Contacto

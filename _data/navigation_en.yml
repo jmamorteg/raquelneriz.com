@@ -1,0 +1,43 @@
+- title: Home
+  url: /en/
+
+- title: Kintsugi Workshop
+  url: /en/taller-kintsugi/
+  children:
+    - title: Therapeutic approach
+      url: /en/taller-kintsugi/#therapeutic-approach
+    - title: Booking and info
+      url: /en/taller-kintsugi/#booking
+
+- title: Practice Areas
+  url: /en/servicios/
+  children:
+    - title: Conservation and restoration
+      url: /en/servicios/#restoration-conservation
+    - title: Intentional tattooing
+      url: /en/servicios/#intentional-tattoo
+    - title: Restorative yoga
+      url: /en/servicios/#restorative-yoga
+    - title: Plants and nature
+      url: /en/servicios/#plants-nature
+
+- title: Portfolio
+  url: /en/portfolio/
+  children:
+    - title: Restoration
+      url: /en/portfolio/#restauracion
+    - title: Kintsugi
+      url: /en/portfolio/#kintsugi
+    - title: Artworks
+      url: /en/portfolio/#mis-obras
+    - title: Tattoo
+      url: /en/portfolio/#tatuaje
+
+- title: Blog
+  url: /en/blog/
+
+- title: About
+  url: /en/about/
+
+- title: Contact
+  url: /en/contact/

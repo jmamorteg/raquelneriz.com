@@ -1,0 +1,43 @@
+- title: Inici
+  url: /ca/
+
+- title: Taller de Kintsugi
+  url: /ca/taller-kintsugi/
+  children:
+    - title: Enfocament terapèutic
+      url: /ca/taller-kintsugi/#enfocament-terapeutic
+    - title: Reserva i informació
+      url: /ca/taller-kintsugi/#reserva
+
+- title: Línies de treball
+  url: /ca/servicios/
+  children:
+    - title: Restauració i conservació
+      url: /ca/servicios/#restauracio-conservacio
+    - title: Tatuatge amb intenció
+      url: /ca/servicios/#tatuatge-intencio
+    - title: Ioga restauratiu
+      url: /ca/servicios/#ioga-restauratiu
+    - title: Plantes i natura
+      url: /ca/servicios/#plantes-natura
+
+- title: Portfoli
+  url: /ca/portfolio/
+  children:
+    - title: Restauració
+      url: /ca/portfolio/#restauracion
+    - title: Kintsugi
+      url: /ca/portfolio/#kintsugi
+    - title: Les meves obres
+      url: /ca/portfolio/#mis-obras
+    - title: Tatuatge
+      url: /ca/portfolio/#tatuaje
+
+- title: Blog
+  url: /ca/blog/
+
+- title: Sobre mi
+  url: /ca/about/
+
+- title: Contacte
+  url: /ca/contact/

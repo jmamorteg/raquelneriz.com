@@ -1,0 +1,43 @@
+- title: Inicio
+  url: /
+
+- title: Taller de Kintsugi
+  url: /taller-kintsugi/
+  children:
+    - title: Enfoque terapéutico
+      url: /taller-kintsugi/#enfoque-terapeutico
+    - title: Reserva e información
+      url: /taller-kintsugi/#reserva
+
+- title: Líneas de trabajo
+  url: /servicios/
+  children:
+    - title: Restauración y conservación
+      url: /servicios/#restauracion-conservacion
+    - title: Tatuaje con intención
+      url: /servicios/#tatuaje-intencion
+    - title: Yoga restaurativo
+      url: /servicios/#yoga-restaurativo
+    - title: Plantas y naturaleza
+      url: /servicios/#plantas-naturaleza
+
+- title: Portfolio
+  url: /portfolio/
+  children:
+    - title: Restauración
+      url: /portfolio/#restauracion
+    - title: Kintsugi
+      url: /portfolio/#kintsugi
+    - title: Mis obras
+      url: /portfolio/#mis-obras
+    - title: Tatuaje
+      url: /portfolio/#tatuaje
+
+- title: Blog
+  url: /blog/
+
+- title: Sobre mí
+  url: /about/
+
+- title: Contacto
+  url: /contact/

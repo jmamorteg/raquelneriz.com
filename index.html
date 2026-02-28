@@ -1,3 +1,35 @@
 ---
-layout: home
+layout: default
+lang: ca
 ---
+
+<script>
+	(function () {
+		if (window.location.pathname !== '{{ '/' | relative_url }}') return;
+		var lang = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+		if (lang.indexOf('en') === 0) {
+			window.location.replace('{{ '/en/' | relative_url }}');
+			return;
+		}
+		if (lang.indexOf('ca') === 0) {
+			window.location.replace('{{ '/ca/' | relative_url }}');
+			return;
+		}
+		if (lang.indexOf('es') === 0) {
+			window.location.replace('{{ '/es/' | relative_url }}');
+			return;
+		}
+		window.location.replace('{{ '/ca/' | relative_url }}');
+	})();
+</script>
+
+<div class="landing-minimal">
+	<img class="landing-minimal-logo" src="{{ '/assets/img/RN_logo.svg' | relative_url }}" alt="Raquel Neriz" />
+	<p class="landing-minimal-title">Seleccionando idioma...</p>
+	<p class="landing-minimal-text">
+		Si no redirige automáticamente:
+		<a href="{{ '/ca/' | relative_url }}">Català</a> ·
+		<a href="{{ '/es/' | relative_url }}">Español</a> ·
+		<a href="{{ '/en/' | relative_url }}">English</a>
+	</p>
+</div>

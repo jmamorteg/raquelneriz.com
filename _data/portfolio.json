@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "id": "restauracion",
+      "title": "Restauración",
+      "items": []
+    },
+    {
+      "id": "kintsugi",
+      "title": "Kintsugi",
+      "items": []
+    },
+    {
+      "id": "mis-obras",
+      "title": "Mis obras",
+      "items": []
+    },
+    {
+      "id": "tatuaje",
+      "title": "Tatuaje",
+      "items": []
+    }
+  ]
+}

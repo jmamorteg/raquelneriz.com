@@ -2,11 +2,12 @@
 layout: default
 title: Sobre mí
 permalink: /about/
+lang: es
 ---
 
 # Sobre mí
 
-Bienvenida a mi espacio personal donde comparto reflexiones sobre desarrollo personal, bienestar y crecimiento espiritual.
+Bienvenida a mi espacio personal donde comparto reflexiones.
 
 ## Mi historia
 

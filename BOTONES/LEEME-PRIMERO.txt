@@ -1,0 +1,13 @@
+USO RAPIDO (sin conocimientos técnicos)
+
+1) 01-NUEVO-POST.bat
+   Crea un nuevo post y lo abre para escribir.
+
+2) 02-NUEVO-ITEM-PORTFOLIO.bat
+   Añade una imagen al portfolio (con hashtags y link opcional).
+
+3) 03-PUBLICAR.bat
+   Publica los cambios en la web.
+
+4) 04-SETUP-EQUIPO-NUEVO.bat
+   Solo para configurar un ordenador nuevo.
