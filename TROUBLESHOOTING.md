@@ -255,3 +255,35 @@ Si build funciona y serve falla, capturar error exacto y diagnosticar por seccio
 - Task VS Code: `.vscode/tasks.json`
 - Setup automatizado: `setup.ps1` y `setup.bat`
 - Checklist operativo simplificado: `README.md` y `BOTONES/LEEME-PRIMERO.txt`
+
+---
+
+## 12) DNS para el dominio en GitHub Pages
+
+Valores a entregar al proveedor del dominio `raquelneriz.com`:
+
+- **Apex (raquelneriz.com) → A records**
+	- 185.199.108.153
+	- 185.199.109.153
+	- 185.199.110.153
+	- 185.199.111.153
+	- TTL sugerido: 300-900 s (puede ser mayor si la plataforma no permite valores bajos).
+- **WWW → CNAME**
+	- Host: `www`
+	- Destino: `jmamorteg.github.io.` (con punto final si el panel lo permite).
+	- TTL sugerido: 300-900 s.
+- **Opcional IPv6 (si el registrador lo soporta)**
+	- AAAA: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
+- **Registro en el repo**
+	- Mantener `CNAME` en la raíz del repo con solo `raquelneriz.com` (sin `www` ni `http`).
+
+### Validación tras cambios DNS
+
+```powershell
+dig +short raquelneriz.com A
+dig +short raquelneriz.com AAAA
+dig +short www.raquelneriz.com CNAME
+dig +short www.raquelneriz.com A
+```
+
+Los cuatro A deben resolver a los IP de GitHub Pages y `www` debe devolver el CNAME. Forzar HTTPS en Settings → Pages una vez propagado.
