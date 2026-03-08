@@ -6,17 +6,17 @@
 {% endif %}
 
 {% if clean_path == '/' %}
-  {% assign es_path = '/es/' %}
-  {% assign en_path = '/en/' %}
   {% assign ca_path = '/ca/' %}
+  {% assign en_path = '/en/' %}
+  {% assign es_path = '/es/' %}
 {% else %}
-  {% assign es_path = '/es' | append: clean_path %}
-  {% assign en_path = '/en' | append: clean_path %}
   {% assign ca_path = '/ca' | append: clean_path %}
+  {% assign en_path = '/en' | append: clean_path %}
+  {% assign es_path = '/es' | append: clean_path %}
 {% endif %}
 
 <div class="lang-switcher" aria-label="Language selector">
-  <a href="{{ es_path | relative_url }}" class="lang-link{% if page.lang == 'es' or page.lang == nil %} is-current{% endif %}">Esp</a>
-  <a href="{{ en_path | relative_url }}" class="lang-link{% if page.lang == 'en' %} is-current{% endif %}">Eng</a>
-  <a href="{{ ca_path | relative_url }}" class="lang-link{% if page.lang == 'ca' %} is-current{% endif %}">Cat</a>
+  <a href="{{ ca_path | relative_url }}" class="lang-link{% if page.lang == 'ca' %} is-current{% endif %}">cat</a>
+  <a href="{{ en_path | relative_url }}" class="lang-link{% if page.lang == 'en' %} is-current{% endif %}">eng</a>
+  <a href="{{ es_path | relative_url }}" class="lang-link{% if page.lang == 'es' or page.lang == nil %} is-current{% endif %}">esp</a>
 </div>

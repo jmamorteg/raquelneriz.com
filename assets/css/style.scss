@@ -41,6 +41,10 @@ i,
     font-style: italic;
 }
 
+.nav-logo {
+    max-width: 50%;
+}
+
 /* Personalización de colores para el tema Minimal */
 h1, h2, h3, h4, h5, h6 {
     color: #8B4513 !important;
@@ -58,28 +62,28 @@ body {
 .site-nav {
     margin-top: 1rem;
     padding-top: 0.8rem;
-    border-top: 1px solid #e5dcc3;
 }
 
 .lang-switcher {
     margin-top: 0.8rem;
     display: flex;
-    gap: 0.35rem;
+    gap: 0.5rem;
 }
 
 .lang-link {
-    border: 1px solid #ddcfab;
-    border-radius: 999px;
-    padding: 0.18rem 0.55rem;
-    font-size: 0.78rem;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-size: 0.7rem;
+    font-weight: 600;
     text-decoration: none;
-    color: #444 !important;
+    color: inherit !important;
+    text-transform: lowercase;
 }
 
 .lang-link.is-current {
-    background: #8B6B2E;
-    color: #fff !important;
-    border-color: #8B6B2E;
+    font-style: italic;
+    font-weight: 500;
 }
 
 .site-nav-list,
@@ -90,73 +94,76 @@ body {
 }
 
 .site-nav-item {
-    margin: 0 0 0.55rem;
+    margin: 0rem;
 }
 
 .site-nav-item > a,
-.site-nav-group > summary > span {
+.site-nav-parent {
     color: #1f1f1f !important;
     text-decoration: none;
     font-family: "Maitree", "Noto Sans", "Segoe UI", Arial, sans-serif !important;
+    font-style: italic;
+    text-transform: lowercase;
 }
 
 .site-nav-item > a:hover,
-.site-nav-group > summary > span:hover,
+.site-nav-parent:hover,
 .site-subnav-list a:hover {
-    color: #8B6B2E !important;
+    color: inherit !important;
 }
 
 .site-nav-group {
-    border: 1px solid #e6dbc0;
-    border-radius: 8px;
-    background: #fffef9;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
 }
 
-.site-nav-group > summary {
-    cursor: pointer;
-    list-style: none;
-    padding: 0.45rem 0.55rem;
+.site-nav-parent {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit !important;
 }
 
-.site-nav-group > summary::-webkit-details-marker {
-    display: none;
-}
-
-.site-nav-group > summary::before {
-    content: "▸";
-    color: #8B6B2E;
-    margin-right: 0.35rem;
-}
-
-.site-nav-group[open] > summary::before {
-    content: "▾";
+.site-nav-parent:hover {
+    color: inherit !important;
 }
 
 .site-subnav-list {
-    margin-top: 0.35rem;
-    margin-left: 0.6rem;
-    margin-right: 0.6rem;
-    margin-bottom: 0.55rem;
-    border-left: 2px solid #e8d9ab;
-    padding-left: 0.6rem;
+    display: none;
+    margin: 0 0 0 0;
+    padding-left: 0;
+    border-left: 0;
 }
 
 .site-subnav-list li {
-    margin: 0.2rem 0;
+    margin: 0 0;
 }
 
 .site-subnav-list a {
     color: #3a3a3a !important;
     font-size: 0.92rem;
     text-decoration: none;
+    font-style: italic;
+    text-transform: lowercase;
 }
 
-.site-subnav-overview a {
-    font-weight: 500;
+.site-nav-item:hover .site-subnav-list,
+.site-nav-item:focus-within .site-subnav-list {
+    display: block;
+}
+
+.site-nav-item.is-active .site-subnav-list {
+    display: block;
 }
 
 .site-nav-item.is-active > a {
     color: #8B6B2E !important;
+    font-style: normal;
+}
+
+.site-nav-item.is-active .site-nav-parent {
+    font-style: normal;
 }
 
 .landing-minimal {
@@ -224,13 +231,14 @@ ul li a {
 
 /* Footer personalizado */
 footer {
-    background-color: #f9f9f9 !important;
-    border-top: 1px solid #e1e1e1 !important;
-    padding: 1rem 0 !important;
-    text-align: center !important;
     color: #666 !important;
+    bottom: 10px;
 }
 
+footer p {
+    margin: 0 !important;
+    font-size: 0.9rem;
+}
 .kintsugi-page {
     max-width: 760px;
 }

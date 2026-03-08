@@ -26,17 +26,14 @@
 
       <li class="site-nav-item{% if is_active or is_child_active %} is-active{% endif %}">
         {% if item.children %}
-          <details class="site-nav-group" {% if is_active or is_child_active %}open{% endif %}>
-            <summary>
-              <span>{{ item.title }}</span>
-            </summary>
+          <div class="site-nav-group">
+            <a class="site-nav-parent" href="{{ item_url }}">{{ item.title }}</a>
             <ul class="site-subnav-list">
-              <li class="site-subnav-overview"><a href="{{ item_url }}">Ver sección</a></li>
               {% for child in item.children %}
                 <li><a href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
               {% endfor %}
             </ul>
-          </details>
+          </div>
         {% else %}
           <a href="{{ item_url }}">{{ item.title }}</a>
         {% endif %}
