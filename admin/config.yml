@@ -23,8 +23,8 @@ collections:
     fields:
       - { label: "Título", name: title, widget: string }
       - { label: "Fecha", name: date, widget: datetime, format: "YYYY-MM-DD HH:mm:ss ZZ" }
-      - { label: "Categorías", name: categories, widget: list, default: [] }
-      - { label: "Tags", name: tags, widget: list, default: [] }
+      - { label: "Categorías", name: categories, widget: list }
+      - { label: "Tags", name: tags, widget: list }
       - { label: "Contenido", name: body, widget: markdown }
 
   - name: pages_root
