@@ -1,0 +1,313 @@
+backend:
+  name: github
+  repo: jmamorteg/raquelneriz.com
+  branch: main
+  base_url: https://staticcmsrn.jmamorteg.workers.dev
+  auth_endpoint: auth
+  cms_label: "Static CMS"
+
+publish_mode: simple
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+locale: es
+
+collections:
+  - name: posts
+    label: Entradas
+    label_singular: Entrada
+    folder: "_posts"
+    create: true
+    extension: "markdown"
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: title, widget: string }
+      - { label: "Fecha", name: date, widget: datetime, format: "YYYY-MM-DD HH:mm:ss ZZ" }
+      - { label: "Categorías", name: categories, widget: list, default: [] }
+      - { label: "Tags", name: tags, widget: list, default: [] }
+      - { label: "Contenido", name: body, widget: markdown }
+
+  - name: pages_root
+    label: Páginas (raíz)
+    files:
+      - label: Sobre mí (raíz)
+        name: about_root
+        file: "about.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/about/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Blog (raíz)
+        name: blog_root
+        file: "blog.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/blog/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Contacto (raíz)
+        name: contact_root
+        file: "contact.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/contact/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Portfolio (raíz)
+        name: portfolio_root
+        file: "portfolio.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/portfolio/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Líneas de trabajo (raíz)
+        name: servicios_root
+        file: "servicios.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/servicios/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Taller Kintsugi (raíz)
+        name: kintsugi_root
+        file: "taller-kintsugi.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/taller-kintsugi/" }
+          - { label: Contenido, name: body, widget: markdown }
+
+  - name: pages_es
+    label: Páginas ES (/es)
+    files:
+      - label: Inicio (es)
+        name: home_es
+        file: "es/index.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string, required: false }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/es/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Sobre mí (es)
+        name: about_es
+        file: "es/about.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/es/about/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Blog (es)
+        name: blog_es
+        file: "es/blog.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/es/blog/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Contacto (es)
+        name: contact_es
+        file: "es/contact.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/es/contact/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Portfolio (es)
+        name: portfolio_es
+        file: "es/portfolio.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/es/portfolio/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Líneas de trabajo (es)
+        name: servicios_es
+        file: "es/servicios.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/es/servicios/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Taller Kintsugi (es)
+        name: kintsugi_es
+        file: "es/taller-kintsugi.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: es }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/es/taller-kintsugi/" }
+          - { label: Contenido, name: body, widget: markdown }
+
+  - name: pages_en
+    label: Páginas EN (/en)
+    files:
+      - label: Inicio (en)
+        name: home_en
+        file: "en/index.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string, required: false }
+          - { label: Lang, name: lang, widget: hidden, default: en }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/en/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: About (en)
+        name: about_en
+        file: "en/about.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: en }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/en/about/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Blog (en)
+        name: blog_en
+        file: "en/blog.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: en }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/en/blog/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Contact (en)
+        name: contact_en
+        file: "en/contact.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: en }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/en/contact/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Portfolio (en)
+        name: portfolio_en
+        file: "en/portfolio.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: en }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/en/portfolio/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Services (en)
+        name: services_en
+        file: "en/servicios.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: en }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/en/servicios/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Kintsugi Workshop (en)
+        name: kintsugi_en
+        file: "en/taller-kintsugi.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: en }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/en/taller-kintsugi/" }
+          - { label: Contenido, name: body, widget: markdown }
+
+  - name: pages_ca
+    label: Páginas CA (/ca)
+    files:
+      - label: Inici (ca)
+        name: home_ca
+        file: "ca/index.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string, required: false }
+          - { label: Lang, name: lang, widget: hidden, default: ca }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/ca/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Sobre mi (ca)
+        name: about_ca
+        file: "ca/about.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: ca }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/ca/about/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Blog (ca)
+        name: blog_ca
+        file: "ca/blog.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: ca }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/ca/blog/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Contacte (ca)
+        name: contact_ca
+        file: "ca/contact.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: ca }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/ca/contact/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Portfolio (ca)
+        name: portfolio_ca
+        file: "ca/portfolio.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: ca }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/ca/portfolio/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Serveis (ca)
+        name: services_ca
+        file: "ca/servicios.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: ca }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/ca/servicios/" }
+          - { label: Contenido, name: body, widget: markdown }
+      - label: Taller Kintsugi (ca)
+        name: kintsugi_ca
+        file: "ca/taller-kintsugi.markdown"
+        fields:
+          - { label: Layout, name: layout, widget: hidden, default: default }
+          - { label: Título, name: title, widget: string }
+          - { label: Lang, name: lang, widget: hidden, default: ca }
+          - { label: Permalink, name: permalink, widget: hidden, default: "/ca/taller-kintsugi/" }
+          - { label: Contenido, name: body, widget: markdown }
+
+  - name: data_portfolio
+    label: Datos de portfolio
+    files:
+      - label: Secciones de portfolio
+        name: portfolio_json
+        file: "_data/portfolio.json"
+        description: "Lista de secciones e items del portfolio"
+        fields:
+          - label: Secciones
+            name: sections
+            widget: list
+            summary: "{{title}} ({{id}})"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Título, name: title, widget: string }
+              - label: Items
+                name: items
+                widget: list
+                collapsed: true
+                required: false
+                fields:
+                  - { label: Título, name: title, widget: string }
+                  - { label: Descripción, name: description, widget: text, required: false }
+                  - { label: Imagen, name: image, widget: image, required: false }
+                  - { label: Enlace, name: link, widget: string, required: false }
