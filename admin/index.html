@@ -6,14 +6,20 @@
     <title>Static CMS | Raquel Neriz</title>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@staticcms/core@1.6.1/dist/static-cms.css"
+      href="https://cdn.jsdelivr.net/npm/@staticcms/core@1.6.1/dist/static-cms.css"
     />
-    <script src="https://unpkg.com/@staticcms/core@1.6.1/dist/static-cms-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@staticcms/core@1.6.1/dist/static-cms-app.js" defer></script>
   </head>
   <body>
     <div id="nc-root"></div>
     <script>
-      CMS.init();
+      document.addEventListener('DOMContentLoaded', function () {
+        if (window.CMS) {
+          CMS.init();
+        } else {
+          console.error('Static CMS no se cargó: revisa bloqueadores o el CDN.');
+        }
+      });
     </script>
   </body>
 </html>
