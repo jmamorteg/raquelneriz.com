@@ -73,15 +73,28 @@
       })();
 
       window.addEventListener('message', function (event) {
-        if (event.origin !== location.origin) {
+        const allowedOrigins = [location.origin, 'https://staticcmsrn.jmamorteg.workers.dev'];
+        if (!allowedOrigins.includes(event.origin)) {
           return;
         }
 
-        if (typeof event.data !== 'string') {
-          return;
+        let token = null;
+
+        // New worker callback format: object payload sent with postMessage.
+        if (
+          event.data &&
+          typeof event.data === 'object' &&
+          event.data.type === 'static-cms-auth' &&
+          event.data.provider === 'github'
+        ) {
+          token = event.data.token || null;
         }
 
-        const token = extractTokenFromOAuthHash(event.data);
+        // Backward compatibility with previous string/hash callback payload.
+        if (!token && typeof event.data === 'string') {
+          token = extractTokenFromOAuthHash(event.data);
+        }
+
         if (!token) {
           return;
         }
