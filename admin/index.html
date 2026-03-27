@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="/assets/static-cms/app/main.css"
     />
-    <script src="/assets/static-cms/app/static-cms-app.js" defer></script>
+    <script id="static-cms-bundle" src="/assets/static-cms/app/static-cms-app.js" defer></script>
   </head>
   <body>
     <div id="nc-root"></div>
@@ -93,6 +93,42 @@
           console.error('No se pudo persistir token desde callback', e);
         }
       });
+
+      (function initCms() {
+        var initialized = false;
+
+        function start() {
+          if (initialized) {
+            return;
+          }
+          if (!window.CMS || typeof window.CMS.init !== 'function') {
+            return;
+          }
+
+          initialized = true;
+          window.CMS.init();
+        }
+
+        // Typical path for defer script: CMS is available by DOMContentLoaded.
+        document.addEventListener('DOMContentLoaded', start);
+
+        // Fallback path: if bundle loads later, initialize on load event.
+        var bundle = document.getElementById('static-cms-bundle');
+        if (bundle) {
+          bundle.addEventListener('load', start);
+        }
+
+        // Last-resort polling for edge race conditions on mobile/webview browsers.
+        var retries = 30;
+        var timer = setInterval(function () {
+          if (initialized || retries <= 0) {
+            clearInterval(timer);
+            return;
+          }
+          retries -= 1;
+          start();
+        }, 200);
+      })();
     </script>
   </body>
 </html>
