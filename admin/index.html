@@ -20,7 +20,12 @@
           try {
             const payload = JSON.parse(raw.slice(prefix.length));
             if (payload && payload.token) {
-              localStorage.setItem('static-cms.user', JSON.stringify({ token: payload.token }));
+              // Persist auth in the format Static CMS expects
+              localStorage.removeItem('static-cms.user');
+              localStorage.setItem(
+                'static-cms-user',
+                JSON.stringify({ backendName: 'github', token: payload.token })
+              );
             }
           } catch (e) {
             console.error('No se pudo procesar el token en hash', e);
