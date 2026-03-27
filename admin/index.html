@@ -13,6 +13,24 @@
   <body>
     <div id="nc-root"></div>
     <script>
+      (function handleHashToken() {
+        const raw = decodeURIComponent((location.hash || '').slice(1));
+        const prefix = 'authorization:github:success:';
+        if (raw && raw.startsWith(prefix)) {
+          try {
+            const payload = JSON.parse(raw.slice(prefix.length));
+            if (payload && payload.token) {
+              localStorage.setItem('static-cms.user', JSON.stringify({ token: payload.token }));
+            }
+          } catch (e) {
+            console.error('No se pudo procesar el token en hash', e);
+          }
+          // Limpia el hash y recarga para evitar repetir
+          const cleanUrl = location.origin + location.pathname;
+          location.replace(cleanUrl);
+        }
+      })();
+
       document.addEventListener('DOMContentLoaded', function () {
         if (window.CMS) {
           CMS.init();
