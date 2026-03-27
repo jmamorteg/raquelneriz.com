@@ -25,9 +25,10 @@
           } catch (e) {
             console.error('No se pudo procesar el token en hash', e);
           }
-          // Limpia el hash y recarga para evitar repetir
+          // Limpia el hash y recarga para re-inicializar Static CMS
           const cleanUrl = location.origin + location.pathname;
           location.replace(cleanUrl);
+          window.location.reload();
         }
       })();
 
