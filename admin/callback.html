@@ -1,69 +1,25 @@
 <!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Static CMS Callback</title>
-  </head>
+<html>
+  <head><meta charset="utf-8" /><title>Autorizando...</title></head>
   <body>
     <script>
       (function () {
-        function extractTokenFromOAuthHash(raw) {
-          var prefix = 'authorization:github:success:';
-          if (!raw || raw.indexOf(prefix) !== 0) {
-            return null;
-          }
-
-          var body = raw.slice(prefix.length);
-
-          try {
-            var json = JSON.parse(body);
-            if (json && (json.token || json.access_token)) {
-              return json.token || json.access_token;
-            }
-          } catch (e) {
-            // Ignore and continue
-          }
-
-          try {
-            var params = new URLSearchParams(body);
-            return params.get('token') || params.get('access_token') || body || null;
-          } catch (e) {
-            return body || null;
-          }
-        }
-
-        function persistToken(token) {
-          if (!token) {
-            return;
-          }
-
-          localStorage.setItem('static-cms.user', JSON.stringify({ token: token }));
-          localStorage.setItem(
-            'static-cms-user',
-            JSON.stringify({ backendName: 'github', token: token })
-          );
-        }
-
         var raw = decodeURIComponent((location.hash || '').slice(1));
-        var token = extractTokenFromOAuthHash(raw);
+        // raw = "authorization:github:success:{...}"
 
-        if (token) {
-          persistToken(token);
-
+        if (raw && raw.indexOf('authorization:github:success:') === 0) {
           if (window.opener && !window.opener.closed) {
-            try {
-              window.opener.postMessage(raw, location.origin);
-            } catch (e) {
-              // Fallback to direct redirect below
-            }
-            window.close();
+            // Mismo origen → postMessage sin restricciones
+            window.opener.postMessage(raw, window.location.origin);
+            setTimeout(function () { window.close(); }, 300);
             return;
           }
         }
 
+        // Si no hay opener (acceso directo), vuelve al admin
         window.location.replace('/admin/');
       })();
     </script>
+    <p>Autorizando, cierra esta ventana si no se cierra sola...</p>
   </body>
 </html>
